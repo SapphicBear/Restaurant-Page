@@ -25,6 +25,21 @@ ul {
 body {
     background: rgb(255, 205, 253);
 }
+
+.outside {
+    height: 50px;
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding: 1rem;
+    background: var(--main-background);
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 10px var(--shadow-color);
+}
+
+
+
 #content {
     margin-bottom: 2rem;
     display: grid;
