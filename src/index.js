@@ -28,38 +28,16 @@ contactButton.addEventListener("click", () => {
 })
 
 function unloadPage() {
-    let div1, div2, div3, div4, div5;
+    let wrapper;
     if (document.querySelector(".header")) {
-        div1 = ".header";
-        div2 = ".info";
-        div3 = ".main";
-        div4 = ".call-to-action";
-        div5 = ".footer";
-            document.querySelector(div1).remove();
-            document.querySelector(div2).remove();
-            document.querySelector(div3).remove();
-            document.querySelector(div4).remove();
-            document.querySelector(div5).remove();
+        wrapper = ".home-wrapper"
+            document.querySelector(wrapper).remove();
     } else if (document.querySelector(".menu-header")) {
-        div1 = ".menu-header";
-        div2 = ".menu-info";
-        div3 = ".menu-main";
-        div4 = ".menu-ad";
-        div5 = ".menu-footer";
-            document.querySelector(div1).remove();
-            document.querySelector(div2).remove();
-            document.querySelector(div3).remove();
-            document.querySelector(div4).remove();
-            document.querySelector(div5).remove();
+        wrapper = ".menu-wrapper";
+            document.querySelector(wrapper).remove();
     } else if (document.querySelector(".contact-header")) {
-        div1 = ".contact-header";
-        div2 = ".contact-info";
-        div3 = ".contact-hours";
-        div4 = ".contact-footer";
-            document.querySelector(div1).remove();
-            document.querySelector(div2).remove();
-            document.querySelector(div3).remove();
-            document.querySelector(div4).remove();
+       wrapper = ".contact-wrapper";
+            document.querySelector(wrapper).remove();
     }
 }
 })();
