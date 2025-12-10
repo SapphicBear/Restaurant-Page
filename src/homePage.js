@@ -1,9 +1,7 @@
 export function pageLoad() {
     const DOM = document.querySelector("#content");
-    const aside = document.createElement("aside");
     const h1 = document.createElement("h1");
     const h3 = document.createElement("h3");
-    const para = document.createElement("p");
     const h4 = document.createElement("h4");
     const ul = document.createElement("ul");
     const li = document.createElement("li");
