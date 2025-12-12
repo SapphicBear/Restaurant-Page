@@ -7,22 +7,38 @@ import { contactPage } from "./contactPage.js";
 (function () {
 console.log("Hello! Javascript is running!");
 
-pageLoad();
 
 const homeButton = document.querySelector("button.home");
 const menuButton = document.querySelector("button.menu");
 const contactButton = document.querySelector("button.contact");
 
+
+function buttonCheck() {
+    const buttons = document.querySelectorAll("nav button");
+    buttons.forEach((button) => {
+        button.classList.remove("active");
+    })
+}
+
+pageLoad();
+homeButton.classList.add("active");
+
 homeButton.addEventListener("click", () => {
+    buttonCheck();
+    homeButton.classList.add("active");
     unloadPage();
     pageLoad();
 });
 menuButton.addEventListener("click", () => {
+    buttonCheck();
+    menuButton.classList.add("active");
     unloadPage();
     menuPage();
 });
 
 contactButton.addEventListener("click", () => {
+    buttonCheck();
+    contactButton.classList.add("active");
     unloadPage();
     contactPage();
 })

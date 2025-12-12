@@ -10,8 +10,6 @@ export function menuPage() {
         document.querySelector(".menu-info").appendChild(document.createElement("p")).textContent = "Check out our daily menu specials!";
         document.querySelector(".menu-info").appendChild(document.createElement("div")).className = "image-area";
         document.querySelector(".image-area").appendChild(document.createElement("span")).className = "img";
-        document.querySelector(".image-area").appendChild(document.createElement("span")).className = "img";
-        document.querySelector(".image-area").appendChild(document.createElement("span")).className = "img";
 
     document.querySelector(".menu-wrapper").appendChild(document.createElement("div")).className = "menu-main";
         let menuItems = ["Big Porkers Menu", "Porker Junior Menu", "30 Gallons of Ice Tea", "Huge Mashed Potatos", "Margret's Jordy Drink special"];
@@ -19,17 +17,14 @@ export function menuPage() {
         totalItems.forEach((item) => {
                 document.querySelector(".menu-main").appendChild(document.createElement("span")).className = `menu${item}`;
                 document.querySelector(`.menu${item}`).appendChild(document.createElement("div")).className = "img";
-                document.querySelector(`.menu${item}`).appendChild(document.createElement("p"));
-            });
-        let menuItemsDrawn = document.querySelectorAll(`.menu-main > span > p`);
-            menuItemsDrawn.forEach((item) => {
-                for (let i = 0; i < menuItemsDrawn.length; i++) {
-                    let random = Math.floor(Math.random() * menuItems.length);
-                    item.className = menuItems[random];
-                    item.textContent = menuItems[random];
-                }
+                document.querySelector(`.menu${item}`).appendChild(document.createElement("p")).className = "menu-text";
+                let index = 0
+                document.querySelectorAll(".menu-text").forEach((p) => {
+                    p.textContent = menuItems[index];
+                    index += 1;
+                })
             })
-
+           
 
     document.querySelector(".menu-wrapper").appendChild(document.createElement("div")).className = "menu-ad";
         document.querySelector(".menu-ad").appendChild(document.createElement("div")).className = "ad";

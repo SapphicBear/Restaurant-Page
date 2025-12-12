@@ -4,7 +4,23 @@
     font-family:Arial, Helvetica, sans-serif;
     --main-background: rgb(255, 132, 204);
     --shadow-color: rgba(153, 0, 0, 0.445);
+
 }
+@import url(https://fonts.bunny.net/css?family=autour-one:400);
+@import url(https://fonts.bunny.net/css?family=balsamiq-sans:400);
+
+h1,h2,h3,h4, nav {
+    font-family: 'Balsamiq Sans', display;
+}
+
+p, li {
+    font-family: 'Autour One', display;
+}
+
+div[class$="footer"] > p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 body,
 h1, 
 h2, 
@@ -43,6 +59,21 @@ body {
         display: flex;
         gap: 2rem;
         justify-content: space-between;
+
+        button {
+            position: relative;
+        }
+        button.active::after {
+            content: "";
+            display:inline-block;
+            position: absolute;
+            bottom: 0.3rem;
+            left: 1.5rem;
+            width: 12ch;
+            height:4px;
+            background: var(--main-background);
+            border-radius: 50px;
+        }
     }
 }
 
@@ -90,12 +121,13 @@ div {
         font-size: 24px;
     }
     .header .img {
-        background-image: url(./imgs/pigheadhair.png);
+        background-image: url(./imgs/auntiehams.png);
         background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
+        background-size: 400px;
+        background-position: 0 0;
         display: inline-block;
         width: 290px;
+        height: 190px;
     }
 
     .info {
@@ -151,6 +183,10 @@ div {
         outline: none;
         padding: 1rem;
         border-radius: 25px;
+
+        &:hover {
+            background: rgb(255, 50, 84);
+        }
     }
 
     .footer {
@@ -198,7 +234,16 @@ div {
         display: flex;
         gap: 1rem;
     }
+    .img {
+        background-image: url(./imgs/auntiehams.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 300px;
+    }
 }
+
 
 .menu-main {
     display: flex;
@@ -206,6 +251,7 @@ div {
     grid-column: span 3;
     gap: 1rem;
     justify-content: center;
+    align-items: center;
     grid-row: span 3;
     
     span[class^="menu"] {
@@ -221,25 +267,66 @@ div {
         justify-content: center;
         align-items: center;
         gap: 2rem;
+        transition: scale 100ms;
+
+        &:hover {
+            scale: 105%;
+        }
     }
     div {
         background-color: rgb(255, 240, 240);
     }
 }
 
-.menu-main span[class^="menu"] .img  {
-            background-image: url(./imgs/teaicon.png);
+.menu-main span[class^="menu"]:nth-child(4) .img {
+            background-image: url(./imgs/mashedpotatos.png);
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
             width: 100px;
             height: 100px;
+            }
+
+.menu-main span[class^="menu"]:nth-child(3) .img  {
+            background-image: url(./imgs/teaicon.png); 
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100px;
+            height: 100px;    
+}
+.menu-main span[class^="menu"]:nth-child(1) .img {
+    background-image: url(./imgs/menu2.png); 
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;  
+}
+.menu-main span[class^="menu"]:nth-child(2) .img {
+    background-image: url(./imgs/menu1.png); 
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;  
+}
+
+.menu-main span[class^="menu"]:nth-child(5) .img {
+    background-image: url(./imgs/cola.png); 
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;  
 }
 
 .menu-ad {
     grid-row: 2;
+    align-content: center;
     .ad {
         display: flex;
+        
         flex-direction: column;
         gap: 1rem;
         border: rgb(255, 35, 64) dotted 3px;
